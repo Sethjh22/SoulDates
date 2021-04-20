@@ -10,8 +10,8 @@ export default (
     <Switch>
         <Route exact path='/' component={Auth}/>
         <Route path='/Activities' component={Activities}/>
-        <Route path='/Profile/:id' component={Profile}/>
-        <Route path='/Dislikes/:id' component={Dislikes}/>
+        <Route path='/Profile' component={Profile}/>
+        <Route path='/Dislikes' component={Dislikes}/>
         <Route path='/CreateNewDate' component={CreateNewDate}/>
     </Switch>
 )

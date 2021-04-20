@@ -1,15 +1,15 @@
 module.exports = {
     getAllDislikes: (req, res) => {
-        const {id} = req.session.user
-        req.app.get('db').dislikes.get_all_dislikes(id)
+        const {user_id} = req.session.user
+        req.app.get('db').dislikes.get_all_dislikes(user_id)
         .then(dislikes => res.status(200).send(dislikes))
     },
     addToDislikes: async (req, res) => {
-        const {id} = req.session.user
-        const {dateId} = req.params.id
+        const {user_id} = req.session.user
+        const dateId = req.params.id
         const db = await req.app.get('db')
-        if(id){
-            db.dislikes.add_to_dislikes(id, dateId)
+        if(user_id){
+            db.dislikes.add_to_dislikes(user_id, dateId)
         }else{
             return res.status(403)
         }

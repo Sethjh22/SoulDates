@@ -1,17 +1,18 @@
 module.exports = {
     getAllLikes: (req, res) => {
-        const {id} = req.session.user
-        req.app.get('db').likes.get_all_likes(id)
+        const {user_id} = req.session.user
+        req.app.get('db').likes.get_all_likes(user_id)
         .then(likes => res.status(200).send(likes))
     },
     addToLikes: async (req, res) => {
-        const {id} = req.session.user
-        const {dateId} = req.params.id
-        const db = await req.app.get('db')
-        if(id){
-            db.likes.add_to_likes(id, dateId)
+        const {user_id} = req.session.user
+        const dateId = +req.params.id
+        const db = req.app.get('db')
+        if(user_id){
+            await db.likes.add_to_likes(user_id, dateId)
+            return res.sendStatus(200)
         }else{
-            return res.status(403)
+            return res.sendStatus(403)
         }
 
     }

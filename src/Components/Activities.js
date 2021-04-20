@@ -22,9 +22,9 @@ class Activities extends Component{
     addToLikes(){
         let {activity} = this.state
         axios.post(`/api/like/${activity.date_id}`)
-        .then()
+        .then(() => this.getRandomActivity())
         .catch(err => console.log(err))
-        // this.getRandomActivity()
+        
     }
 
     addToDislikes(){

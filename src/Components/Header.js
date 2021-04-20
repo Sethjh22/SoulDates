@@ -19,10 +19,10 @@ class Header extends Component{
         return(
             <div>
 
-                <button>Dates</button>
-                <button>Profile</button>
-                <button>Dislikes</button>
-                <button>Create New</button>
+                <Link to='/Activities'><button>Dates</button></Link>
+                <Link to='/Profile'><button>Profile</button></Link>
+                <Link to='/Dislikes'><button>Dislikes</button></Link>
+                <Link to='/CreateNewDate'><button>Create New</button></Link>
                 <Link to='/'><button onClick={() => this.logout}>Logout</button></Link>
             </div>
         )
