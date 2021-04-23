@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {updateUser} from '../redux/authReducer'
+import './Auth.css'
 
 class Auth extends Component {
     constructor(props){
@@ -38,8 +39,8 @@ class Auth extends Component {
 
     render(){
         return(
-            <div>
-                <div>
+            <div className="auth">
+                <div className="auth-container">
                     <h1>Soul Dates</h1>
                     <div>
                         <p>Username:</p>

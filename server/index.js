@@ -6,6 +6,7 @@ const userCtrl = require('./controllers/user')
 const activitiesCtrl = require('./controllers/activities')
 const likesCtrl = require('./controllers/likes')
 const dislikesCtrl = require('./controllers/dislikes')
+const awsCTRL = require('./controllers/aws')
     
 
 const app = express()
@@ -29,6 +30,7 @@ app.get('/auth/me', userCtrl.getUser)
 
 //activities Endpoint
 app.get('/api/activities/:id', activitiesCtrl.getRandomDate)
+app.post('/api/activities', activitiesCtrl.addToDates)
 
 //likes Endpoints
 app.get('/api/likes', likesCtrl.getAllLikes)
@@ -38,6 +40,9 @@ app.post('/api/like/:id', likesCtrl.addToLikes)
 app.get('/api/dislikes', dislikesCtrl.getAllDislikes)
 app.post('/api/dislike/:id', dislikesCtrl.addToDislikes)
 app.delete('/api/dislike/:id', dislikesCtrl.deleteDislike)
+
+//aws endpoint
+app.get('/api/signs3', awsCTRL.getImageURL)
 
 
 massive({

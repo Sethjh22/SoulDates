@@ -20,4 +20,8 @@ CREATE TABLE dislikes(
     dislike_id SERIAL PRIMARY KEY,
     user_id INT REFERENCES souldates_users(user_id),
     date_id INT REFERENCES dates(date_id)
-)
+);
+INSERT INTO dates
+(activity, image, price, location, info)
+VALUES 
+('')

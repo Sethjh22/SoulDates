@@ -14,7 +14,7 @@ class Activities extends Component{
         this.addToDislikes = this.addToDislikes.bind(this)
     }
     getRandomActivity(){
-        let id = Math.ceil(Math.random() * 1)
+        let id = Math.ceil(Math.random() * 4)
         axios.get(`/api/activities/${id}`).then(res => {
             this.setState({activity: res.data})
         })
@@ -30,9 +30,9 @@ class Activities extends Component{
     addToDislikes(){
         let {activity} = this.state
         axios.post(`/api/dislike/${activity.date_id}`)
-        .then()
+        .then(() =>  this.getRandomActivity())
         .catch(err => console.log(err))
-        this.getRandomActivity()
+       
     }
 
     componentDidMount(){
