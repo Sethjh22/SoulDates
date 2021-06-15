@@ -5,6 +5,7 @@ module.exports = {
         .then(likes => res.status(200).send(likes))
     },
     addToLikes: async (req, res) => {
+        console.log(req.session.user)
         const {user_id} = req.session.user
         const dateId = +req.params.id
         const db = req.app.get('db')

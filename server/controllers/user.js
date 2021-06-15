@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs')
-const { useReducer } = require('react')
+
 
 module.exports = {
     register: async (req, res) => {
@@ -14,7 +14,8 @@ module.exports = {
             let [newUser] = await db.user.create_user(username, hash)
             req.session.user = newUser
 
-            res.status(200).send(req.session.user)
+            res.status(200).send(newUser)
+            console.log(newUser)
         
 
     },
@@ -32,7 +33,8 @@ module.exports = {
         }
         delete user.password
         req.session.user = user
-        res.status(200).send(req.session.user)
+        res.status(200).send(user)
+        console.log(user)
     },
     logout: (req, res) => {
         req.session.destroy()

@@ -26,7 +26,7 @@ app.use(session({
 app.post('/auth/register', userCtrl.register)
 app.post('/auth/login', userCtrl.login)
 app.post('/auth/logout', userCtrl.logout)
-app.get('/auth/me', userCtrl.getUser)
+// app.get('/auth/me', userCtrl.getUser)
 
 //activities Endpoint
 app.get('/api/activities/:id', activitiesCtrl.getRandomDate)

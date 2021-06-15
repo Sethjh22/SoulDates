@@ -20,6 +20,7 @@ class Activities extends Component{
         })
     }
     addToLikes(){
+        
         let {activity} = this.state
         axios.post(`/api/like/${activity.date_id}`)
         .then(() => this.getRandomActivity())
