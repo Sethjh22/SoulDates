@@ -1,0 +1,17 @@
+$primaryColor: #FD2978;
+$middleColor: #FF5864;
+$secondaryColor: #FF655B;
+$btnColor: black;
+
+*{margin: 0;
+padding: 0;
+text-align: center;
+box-sizing: border-box;
+}
+
+@mixin flex($direction, $background){
+  display: flex;
+  justify-content: center;
+  background-color: $background;
+  flex-direction: $direction;
+}

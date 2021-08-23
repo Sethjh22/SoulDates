@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import Header from './Header'
-import './Activities.css'
+import './Activities.scss'
 
 class Activities extends Component{
     constructor(props){
