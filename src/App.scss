@@ -9,9 +9,10 @@ text-align: center;
 box-sizing: border-box;
 }
 
-@mixin flex($direction, $background){
+@mixin flexers($direction, $background){
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: $background;
   flex-direction: $direction;
 }

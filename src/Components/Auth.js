@@ -16,6 +16,7 @@ class Auth extends Component {
         }
         this.login = this.login.bind(this)
         this.register = this.register.bind(this)
+        
     }
     handleEmailChange(val){
         this.setState({ email: val})

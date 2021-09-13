@@ -1,4 +1,11 @@
 @import '../App.scss';
+.activityPage{
+    @include flexers(column, white)
+}
+.activity {
+    @include flexers(column, $middleColor);
+    width: 50%;
+}
 img {
     height: 25vh;
 }

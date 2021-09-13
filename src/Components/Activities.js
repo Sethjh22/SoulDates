@@ -43,9 +43,9 @@ class Activities extends Component{
     render(){
         let {activity} = this.state
         return(
-            <div>
+            <div className ="activityPage">
                 <Header/>
-                <div>
+                <div className="activity">
                     <img src={activity.image} alt={'activity'}/>
                     <h1>{activity.activity}</h1>
                     <h2>{activity.price}</h2>
