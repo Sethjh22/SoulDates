@@ -1,7 +1,10 @@
 @import '../App.scss';
 .activityPage{
-    @include flexers(column, white)
+    @include flexers(column, white);
+    height: 100vh;
+    align-items: space-between; 
 }
+
 .activity {
     @include flexers(column, $middleColor);
     width: 50%;

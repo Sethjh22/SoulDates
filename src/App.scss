@@ -16,3 +16,7 @@ box-sizing: border-box;
   background-color: $background;
   flex-direction: $direction;
 }
+@mixin spaceBetween($topMargin, $bottomMargin){
+  margin-top: $topMargin;
+  margin-bottom: $bottomMargin;
+}
